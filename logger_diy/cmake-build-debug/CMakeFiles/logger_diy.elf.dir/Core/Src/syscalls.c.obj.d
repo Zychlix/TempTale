@@ -1,5 +1,5 @@
 CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj: \
- /home/michal/Desktop/logger_diy/Core/Src/syscalls.c \
+ /home/michal/TempTale/logger_diy/Core/Src/syscalls.c \
  /usr/arm-none-eabi/include/sys/stat.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \

@@ -1,5 +1,5 @@
 CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj: \
- /home/michal/Desktop/logger_diy/Core/Src/sysmem.c \
+ /home/michal/TempTale/logger_diy/Core/Src/sysmem.c \
  /usr/arm-none-eabi/include/errno.h \
  /usr/arm-none-eabi/include/sys/errno.h \
  /usr/arm-none-eabi/include/sys/reent.h \

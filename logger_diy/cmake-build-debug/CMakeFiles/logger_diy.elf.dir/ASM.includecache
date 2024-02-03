@@ -6,5 +6,5 @@
 
 #IncludeRegexTransform: 
 
-/home/michal/Desktop/logger_diy/Core/Startup/startup_stm32l152rctx.s
+/home/michal/TempTale/logger_diy/Core/Startup/startup_stm32l152rctx.s
 

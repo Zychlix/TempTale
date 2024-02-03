@@ -1,3 +1,3 @@
-/home/michal/Desktop/logger_diy/cmake-build-debug/CMakeFiles/logger_diy.elf.dir
-/home/michal/Desktop/logger_diy/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/michal/Desktop/logger_diy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles/logger_diy.elf.dir
+/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
