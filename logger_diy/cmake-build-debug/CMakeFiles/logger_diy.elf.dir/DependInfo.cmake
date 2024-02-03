@@ -30,6 +30,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/michal/TempTale/logger_diy/Core/Src/TMP112.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj.d"
   "/home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj.d"
   "/home/michal/TempTale/logger_diy/Core/Src/main.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj.d"
   "/home/michal/TempTale/logger_diy/Core/Src/stm32l1xx_hal_msp.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj.d"
@@ -45,6 +46,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj.d"
   "/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj.d"
   "/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj.d"
+  "/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj.d"
   "/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj.d"
   "/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj.d"
   "/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj.d"

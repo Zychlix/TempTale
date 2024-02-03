@@ -96,6 +96,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/michal/TempTale/logger_diy/Core/Inc/TMP112.h">
+			<Option target="logger_diy.elf"/>
+		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Core/Inc/TempTale_LCD.h">
 			<Option target="logger_diy.elf"/>
 		</Unit>
@@ -106,6 +109,9 @@
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Core/Inc/stm32l1xx_it.h">
+			<Option target="logger_diy.elf"/>
+		</Unit>
+		<Unit filename="/home/michal/TempTale/logger_diy/Core/Src/TMP112.c">
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c">
@@ -246,6 +252,9 @@
 		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h">
 			<Option target="logger_diy.elf"/>
 		</Unit>
+		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h">
+			<Option target="logger_diy.elf"/>
+		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h">
 			<Option target="logger_diy.elf"/>
 		</Unit>
@@ -280,6 +289,9 @@
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_gpio.h">
+			<Option target="logger_diy.elf"/>
+		</Unit>
+		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_i2c.h">
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_pwr.h">
@@ -322,6 +334,9 @@
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c">
+			<Option target="logger_diy.elf"/>
+		</Unit>
+		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c">
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c">

@@ -28,7 +28,7 @@ const uint8_t TT_BCD_LUT[] =
 
         };
 
-void TT_Write_COM(TT_Display_t * instance, TT_COM com, uint32_t mask, uint32_t value)
+void TT_Write_Segment(TT_Display_t * instance, TT_COM com, uint32_t mask, uint32_t value)
 {
     HAL_LCD_Write(instance->hlcd, com, mask, value);
     HAL_LCD_UpdateDisplayRequest(instance->hlcd);
@@ -76,7 +76,7 @@ void TT_Segment_On(TT_Display_t * instance, TT_Digit_t digit, TT_Segment_t segme
         pin = lcd_seg_EG;
     }
 
-    TT_Write_COM(instance, TT_Row_To_Com(row), 0xFFFFFFFF, (1<<pin));
+    TT_Write_Segment(instance, TT_Row_To_Com(row), 0xFFFFFFFF, (1 << pin));
 
 }
 
@@ -105,7 +105,7 @@ void TT_Display_Integer(TT_Display_t * instance, int16_t number)
     uint16_t accumulator;
     if(number<0)
     {
-        TT_Write_COM(instance,LCD_MINUS_COL,0xFFFFFFFF,LCD_MINUS_PIN);
+        TT_Write_Segment(instance, LCD_MINUS_COL, 0xFFFFFFFF, LCD_MINUS_PIN);
         accumulator = -number;
     } else
     {
@@ -119,7 +119,7 @@ void TT_Display_Integer(TT_Display_t * instance, int16_t number)
     if(accumulator>= 1000)       //Get rid of one, treat as 3 digit
     {
         zero_inhibit = 0;
-        TT_Write_COM(instance,LCD_ONE_COL,0xFFFFFFFF,LCD_ONE_PIN);
+        TT_Write_Segment(instance, LCD_ONE_COL, 0xFFFFFFFF, LCD_ONE_PIN);
         accumulator-=1000;
 
     }
@@ -158,4 +158,17 @@ void TT_Display_Integer(TT_Display_t * instance, int16_t number)
     }
 
     TT_Print_Digit(instance, TT_DIGIT_A, accumulator);
+}
+
+void TT_Display_Decimal(TT_Display_t * instance, int16_t number, TT_Decimals_t point)
+{
+    TT_Display_Integer(instance,number);
+
+    switch (point) {
+        case TT_ONES:
+            break;
+        case TT_TENTHS:
+            TT_Write_Segment(instance,LCD_TENTH_COL,0xFFFFFFFF,LCD_TENTH_PIN);
+
+    }
 }

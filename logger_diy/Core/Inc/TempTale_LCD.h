@@ -46,8 +46,19 @@ typedef enum
 
 #define LCD_MINUS_PIN (1<<26)
 #define LCD_MINUS_COL TT_COM_1
+
 #define LCD_ONE_PIN (1<<25)
 #define LCD_ONE_COL TT_COM_0
+
+#define LCD_TENTH_PIN (1<<6)
+#define LCD_TENTH_COL TT_COM_3
+typedef enum
+{
+ TT_ONES = 0,
+ TT_TENTHS = 1,
+ TT_HUNDREDS = 2,
+}TT_Decimals_t;
+
 
 
 
@@ -58,10 +69,11 @@ typedef struct TT_Display
 
 }TT_Display_t;
 
-void TT_Write_COM(TT_Display_t * instance,TT_COM com, uint32_t mask, uint32_t value);
+void TT_Write_Segment(TT_Display_t * instance, TT_COM com, uint32_t mask, uint32_t value);
 void TT_Clear(TT_Display_t * instance);
 void TT_Segment_On(TT_Display_t * instance, TT_Digit_t digit, TT_Segment_t segment);
 static TT_COM TT_Row_To_Com(uint8_t row);
 
 void TT_Print_Digit(TT_Display_t * instance, TT_Digit_t digit, uint8_t number);
 void TT_Display_Integer(TT_Display_t * instance, int16_t number);
+void TT_Display_Decimal(TT_Display_t * instance, int16_t number, TT_Decimals_t point);

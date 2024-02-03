@@ -129,6 +129,30 @@ logger_diy.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/build
 .PHONY : logger_diy.elf/fast
 
+Core/Src/TMP112.obj: Core/Src/TMP112.c.obj
+.PHONY : Core/Src/TMP112.obj
+
+# target to build an object file
+Core/Src/TMP112.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj
+.PHONY : Core/Src/TMP112.c.obj
+
+Core/Src/TMP112.i: Core/Src/TMP112.c.i
+.PHONY : Core/Src/TMP112.i
+
+# target to preprocess a source file
+Core/Src/TMP112.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.i
+.PHONY : Core/Src/TMP112.c.i
+
+Core/Src/TMP112.s: Core/Src/TMP112.c.s
+.PHONY : Core/Src/TMP112.s
+
+# target to generate assembly for a file
+Core/Src/TMP112.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.s
+.PHONY : Core/Src/TMP112.c.s
+
 Core/Src/TempTale_LCD.obj: Core/Src/TempTale_LCD.c.obj
 .PHONY : Core/Src/TempTale_LCD.obj
 
@@ -497,6 +521,30 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s
 .PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s
 
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj
+.PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.obj
+
+# target to build an object file
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj
+.PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj
+
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.i: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.i
+.PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.i
+
+# target to preprocess a source file
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.i
+.PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.i
+
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.s: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.s
+.PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.s
+
+# target to generate assembly for a file
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.s
+.PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.s
+
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj
 .PHONY : Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.obj
 
@@ -674,6 +722,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... logger_diy.elf"
+	@echo "... Core/Src/TMP112.obj"
+	@echo "... Core/Src/TMP112.i"
+	@echo "... Core/Src/TMP112.s"
 	@echo "... Core/Src/TempTale_LCD.obj"
 	@echo "... Core/Src/TempTale_LCD.i"
 	@echo "... Core/Src/TempTale_LCD.s"
@@ -720,6 +771,9 @@ help:
 	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.obj"
 	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.i"
 	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.s"
+	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.obj"
+	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.i"
+	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.s"
 	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.obj"
 	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.i"
 	@echo "... Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.s"

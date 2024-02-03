@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "TempTale_LCD.h"
+#include "TMP112.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,7 +35,7 @@
 //uint32_t displayed_value = 0x000000f0;
 uint32_t displayed_value = 1<<15;
 TT_COM com = TT_COM_0;
-
+TMP112_t sensor={0};
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -43,6 +44,8 @@ TT_COM com = TT_COM_0;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+I2C_HandleTypeDef hi2c1;
+
 LCD_HandleTypeDef hlcd;
 
 /* USER CODE BEGIN PV */
@@ -53,6 +56,7 @@ LCD_HandleTypeDef hlcd;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_LCD_Init(void);
+static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -91,6 +95,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_LCD_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -98,6 +103,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int k=0;
+    sensor.i2c = &hi2c1;
   while (1)
   {
     /* USER CODE END WHILE */
@@ -108,11 +114,15 @@ int main(void)
     lcd.hlcd = &hlcd;
     while(1) {
 
+        if(TMP_Read(&sensor)!=0)
+        {
+            while (1);
+        }
         HAL_Delay(500);
         HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 1);
         HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 0);
 
-        TT_Display_Integer(&lcd,-1555);
+        TT_Display_Decimal(&lcd,sensor.temperature,TT_TENTHS);
         HAL_Delay(500);
 
         HAL_LCD_Clear(&hlcd);
@@ -175,6 +185,40 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief I2C1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2C1_Init(void)
+{
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
+
 }
 
 /**
