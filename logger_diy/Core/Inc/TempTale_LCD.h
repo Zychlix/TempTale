@@ -44,6 +44,12 @@ typedef enum
 #define TT_SEG_G (1<<TT_SEGMENT_G)
 
 
+#define LCD_MINUS_PIN (1<<26)
+#define LCD_MINUS_COL TT_COM_1
+#define LCD_ONE_PIN (1<<25)
+#define LCD_ONE_COL TT_COM_0
+
+
 
 
 typedef struct TT_Display
@@ -58,3 +64,4 @@ void TT_Segment_On(TT_Display_t * instance, TT_Digit_t digit, TT_Segment_t segme
 static TT_COM TT_Row_To_Com(uint8_t row);
 
 void TT_Print_Digit(TT_Display_t * instance, TT_Digit_t digit, uint8_t number);
+void TT_Display_Integer(TT_Display_t * instance, int16_t number);

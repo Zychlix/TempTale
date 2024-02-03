@@ -11,7 +11,7 @@
 #define TT_DIG_B_EG_OFFSET 6
 
 #define TT_DIG_C_AD_OFFSET 24
-#define TT_DIG_C_EG_OFFSET 0
+#define TT_DIG_C_EG_OFFSET 15
 
 const uint8_t TT_BCD_LUT[] =
         {
@@ -98,4 +98,64 @@ void TT_Print_Digit(TT_Display_t * instance, TT_Digit_t digit, uint8_t number)
             TT_Segment_On(instance,digit, i);
         }
     }
+}
+
+void TT_Display_Integer(TT_Display_t * instance, int16_t number)
+{
+    uint16_t accumulator;
+    if(number<0)
+    {
+        TT_Write_COM(instance,LCD_MINUS_COL,0xFFFFFFFF,LCD_MINUS_PIN);
+        accumulator = -number;
+    } else
+    {
+        accumulator = number;
+    }
+
+
+    uint8_t zero_inhibit = 1;    //Trailing zero
+
+
+    if(accumulator>= 1000)       //Get rid of one, treat as 3 digit
+    {
+        zero_inhibit = 0;
+        TT_Write_COM(instance,LCD_ONE_COL,0xFFFFFFFF,LCD_ONE_PIN);
+        accumulator-=1000;
+
+    }
+
+    uint16_t  position_value;
+
+    position_value = accumulator/100;
+
+    accumulator = accumulator- position_value*100;
+    if(position_value)
+    {
+        zero_inhibit = 0;
+        TT_Print_Digit(instance,TT_DIGIT_C,position_value);
+    }else
+    {
+        if(!zero_inhibit)
+        {
+            TT_Print_Digit(instance, TT_DIGIT_C, position_value);
+        }
+    }
+
+
+    position_value = accumulator/10;
+    accumulator = accumulator- position_value*10;
+
+    if(position_value)
+    {
+        TT_Print_Digit(instance, TT_DIGIT_B, position_value);
+        zero_inhibit = 0;
+    } else
+    {
+        if(!zero_inhibit)
+        {
+            TT_Print_Digit(instance, TT_DIGIT_B, position_value);
+        }
+    }
+
+    TT_Print_Digit(instance, TT_DIGIT_A, accumulator);
 }
