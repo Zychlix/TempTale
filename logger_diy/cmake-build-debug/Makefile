@@ -129,6 +129,30 @@ logger_diy.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/build
 .PHONY : logger_diy.elf/fast
 
+Core/Src/TempTale_LCD.obj: Core/Src/TempTale_LCD.c.obj
+.PHONY : Core/Src/TempTale_LCD.obj
+
+# target to build an object file
+Core/Src/TempTale_LCD.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj
+.PHONY : Core/Src/TempTale_LCD.c.obj
+
+Core/Src/TempTale_LCD.i: Core/Src/TempTale_LCD.c.i
+.PHONY : Core/Src/TempTale_LCD.i
+
+# target to preprocess a source file
+Core/Src/TempTale_LCD.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.i
+.PHONY : Core/Src/TempTale_LCD.c.i
+
+Core/Src/TempTale_LCD.s: Core/Src/TempTale_LCD.c.s
+.PHONY : Core/Src/TempTale_LCD.s
+
+# target to generate assembly for a file
+Core/Src/TempTale_LCD.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.s
+.PHONY : Core/Src/TempTale_LCD.c.s
+
 Core/Src/main.obj: Core/Src/main.c.obj
 .PHONY : Core/Src/main.obj
 
@@ -650,6 +674,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... logger_diy.elf"
+	@echo "... Core/Src/TempTale_LCD.obj"
+	@echo "... Core/Src/TempTale_LCD.i"
+	@echo "... Core/Src/TempTale_LCD.s"
 	@echo "... Core/Src/main.obj"
 	@echo "... Core/Src/main.i"
 	@echo "... Core/Src/main.s"

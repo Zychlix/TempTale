@@ -33,4 +33,5 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj: \
  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h \
  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h \
  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
- /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h
+ /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
+ /home/michal/TempTale/logger_diy/Core/Inc/TempTale_LCD.h

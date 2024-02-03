@@ -96,6 +96,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/michal/TempTale/logger_diy/Core/Inc/TempTale_LCD.h">
+			<Option target="logger_diy.elf"/>
+		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Core/Inc/main.h">
 			<Option target="logger_diy.elf"/>
 		</Unit>
@@ -103,6 +106,9 @@
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Core/Inc/stm32l1xx_it.h">
+			<Option target="logger_diy.elf"/>
+		</Unit>
+		<Unit filename="/home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c">
 			<Option target="logger_diy.elf"/>
 		</Unit>
 		<Unit filename="/home/michal/TempTale/logger_diy/Core/Src/main.c">

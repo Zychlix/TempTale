@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "TempTale_LCD.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,6 +31,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+//uint32_t displayed_value = 0x000000f0;
+uint32_t displayed_value = 1<<23;
+TT_COM com = TT_COM_3;
 
 /* USER CODE END PD */
 
@@ -100,31 +103,37 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-      HAL_Delay(1000);
-      HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,1);
-      HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,0);
 
-      for(int i =0; i<k;i++)
-      {
-         // HAL_LCD_Write(&hlcd,i,0xFFFFFFFF,0xFFFFFFFF);
+    TT_Display_t lcd;
+    lcd.hlcd = &hlcd;
+    while(1) {
+        HAL_Delay(1000);
+        HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 1);
+        HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 0);
 
-      }
-      HAL_LCD_Write(&hlcd,k,0xFFFFFFFF,0xFFFFFFFF);
-      HAL_LCD_UpdateDisplayRequest(&hlcd);
-      HAL_Delay(1000);
+//        for(int i =0; i< 32; i++)
+//        {
+//            TT_Write_COM(&lcd,TT_COM_0,0xffffffff,(1<<i));
+//
+//            HAL_Delay(100);
+//            HAL_LCD_Clear(&hlcd);
+//
+//        }
+//
+        //TT_Write_COM(&lcd,com,0xffffffff,displayed_value);
 
-      HAL_LCD_Clear(&hlcd);
-      HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,0);
-      HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,1);
+        TT_Print_Digit(&lcd,TT_DIGIT_A,k);
+        HAL_LCD_UpdateDisplayRequest(lcd.hlcd);
+        HAL_Delay(1000);
 
-      for(int i =0; i<k;i++)
-      {
-          HAL_LCD_Write(&hlcd,i,0xFFFFFFFF,0);
+        HAL_LCD_Clear(&hlcd);
+        HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 0);
+        HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 1);
 
-      }
-      HAL_LCD_UpdateDisplayRequest(&hlcd);
 
-      k=(k+2)%8;
+//        TT_Write_COM(&lcd,TT_COM_0,0xffffffff,0);
+        k=(k+1)%10;
+    }
 //      HAL_LCD_Write()
   }
   /* USER CODE END 3 */
