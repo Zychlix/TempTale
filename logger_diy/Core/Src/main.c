@@ -49,7 +49,13 @@ I2C_HandleTypeDef hi2c1;
 LCD_HandleTypeDef hlcd;
 
 /* USER CODE BEGIN PV */
+void Display_Temperature(TT_Display_t * instance,int16_t temperature)
+{
+    TT_Write_Segment(instance,LCD_CENTIGRADE_COL,0xffffffff,LCD_CENTIGRADE_PIN);
+    TT_Write_Segment(instance,LCD_TEMP_COL,0xffffffff,LCD_TEMP_PIN);
+    TT_Display_Decimal(instance,temperature,TT_TENTHS); // Display in 10's
 
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -118,18 +124,15 @@ int main(void)
         {
             while (1);
         }
-        HAL_Delay(500);
-        HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 1);
-        HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 0);
 
-        TT_Display_Decimal(&lcd,sensor.temperature,TT_TENTHS);
-        HAL_Delay(500);
 
         HAL_LCD_Clear(&hlcd);
-        HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 0);
-        HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 1);
+        Display_Temperature(&lcd,sensor.temperature);
+        HAL_LCD_UpdateDisplayRequest(&hlcd);
 
-        k=(k+1)%10;
+
+        HAL_Delay(200);
+
     }
 //      HAL_LCD_Write()
   }

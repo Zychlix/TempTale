@@ -52,6 +52,16 @@ typedef enum
 
 #define LCD_TENTH_PIN (1<<6)
 #define LCD_TENTH_COL TT_COM_3
+
+#define LCD_TEMP_PIN (1<<14)
+#define LCD_TEMP_COL TT_COM_1
+
+#define LCD_X_1_PIN (1<<13)
+#define LCD_X_2_COL TT_COM_1
+
+#define LCD_CENTIGRADE_PIN (1<<2)
+#define LCD_CENTIGRADE_COL TT_COM_0
+
 typedef enum
 {
  TT_ONES = 0,

@@ -31,7 +31,7 @@ const uint8_t TT_BCD_LUT[] =
 void TT_Write_Segment(TT_Display_t * instance, TT_COM com, uint32_t mask, uint32_t value)
 {
     HAL_LCD_Write(instance->hlcd, com, mask, value);
-    HAL_LCD_UpdateDisplayRequest(instance->hlcd);
+//    HAL_LCD_UpdateDisplayRequest(instance->hlcd);
 }
 
 
@@ -98,6 +98,8 @@ void TT_Print_Digit(TT_Display_t * instance, TT_Digit_t digit, uint8_t number)
             TT_Segment_On(instance,digit, i);
         }
     }
+    //HAL_LCD_UpdateDisplayRequest(instance->hlcd);
+
 }
 
 void TT_Display_Integer(TT_Display_t * instance, int16_t number)
