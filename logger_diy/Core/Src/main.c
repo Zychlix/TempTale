@@ -137,7 +137,7 @@ int main(void)
 
         if(TMP_Read(&sensor)!=0)
         {
-            while (1);
+            //while (1);
         }
 
 
