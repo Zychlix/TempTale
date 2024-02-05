@@ -152,10 +152,11 @@ int main(void)
         HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
 
         k++;
-        if(k>20)
+        if(k==20)
         {
+            HAL_PWR_EnableSleepOnExit(); //Porque lo trabajo?
+            HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
 
-            HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
         }
     }
 //      HAL_LCD_Write()
