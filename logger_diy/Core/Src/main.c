@@ -158,6 +158,13 @@ int main(void)
             HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
 
         }
+
+        uint8_t test=0xD0;
+        volatile HAL_StatusTypeDef ret_val;
+        ret_val = HAL_I2C_Master_Transmit(&hi2c1,0b11101110,&test,1,100);
+
+        ret_val = HAL_I2C_Master_Receive(&hi2c1,0b11101110,&test,1,100);  //Address as in datasheet: 0b1110111x
+        ret_val;
     }
 //      HAL_LCD_Write()
   }
