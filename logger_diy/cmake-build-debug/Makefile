@@ -129,6 +129,30 @@ logger_diy.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/build
 .PHONY : logger_diy.elf/fast
 
+Core/Src/BMP180.obj: Core/Src/BMP180.c.obj
+.PHONY : Core/Src/BMP180.obj
+
+# target to build an object file
+Core/Src/BMP180.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.obj
+.PHONY : Core/Src/BMP180.c.obj
+
+Core/Src/BMP180.i: Core/Src/BMP180.c.i
+.PHONY : Core/Src/BMP180.i
+
+# target to preprocess a source file
+Core/Src/BMP180.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.i
+.PHONY : Core/Src/BMP180.c.i
+
+Core/Src/BMP180.s: Core/Src/BMP180.c.s
+.PHONY : Core/Src/BMP180.s
+
+# target to generate assembly for a file
+Core/Src/BMP180.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.s
+.PHONY : Core/Src/BMP180.c.s
+
 Core/Src/TMP112.obj: Core/Src/TMP112.c.obj
 .PHONY : Core/Src/TMP112.obj
 
@@ -722,6 +746,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... logger_diy.elf"
+	@echo "... Core/Src/BMP180.obj"
+	@echo "... Core/Src/BMP180.i"
+	@echo "... Core/Src/BMP180.s"
 	@echo "... Core/Src/TMP112.obj"
 	@echo "... Core/Src/TMP112.i"
 	@echo "... Core/Src/TMP112.s"

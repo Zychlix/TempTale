@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "TempTale_LCD.h"
 #include "TMP112.h"
+#include "BMP180.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,6 +48,8 @@ TMP112_t sensor={0};
 I2C_HandleTypeDef hi2c1;
 
 LCD_HandleTypeDef hlcd;
+
+extern bmp_t  bmp;
 
 /* USER CODE BEGIN PV */
 void Display_Temperature(TT_Display_t * instance,int16_t temperature)
@@ -131,18 +134,38 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+      bmp_init(&bmp);
     TT_Display_t lcd;
     lcd.hlcd = &hlcd;
+
+
+      if(TMP_Read(&sensor)!=0)
+      {
+          //while (1);
+      }
+      bmp.uncomp.temp = get_ut ();
+      bmp.data.temp = get_temp (&bmp);
+      bmp.uncomp.press = get_up (bmp.oss);
+      bmp.data.press = get_pressure (bmp);
+      bmp.data.altitude = get_altitude (&bmp);
+      float zero_altitude = bmp.data.altitude;
     while(1) {
+
+
 
         if(TMP_Read(&sensor)!=0)
         {
             //while (1);
         }
-
+        bmp.uncomp.temp = get_ut ();
+        bmp.data.temp = get_temp (&bmp);
+        bmp.uncomp.press = get_up (bmp.oss);
+        bmp.data.press = get_pressure (bmp);
+        bmp.data.altitude = get_altitude (&bmp);
 
         HAL_LCD_Clear(&hlcd);
-        Display_Temperature(&lcd,sensor.temperature);
+//        Display_Temperature(&lcd,bmp.data.press);
+        TT_Display_Decimal(&lcd,(bmp.data.altitude-zero_altitude)*10,TT_TENTHS); // Display in 10's
         HAL_LCD_UpdateDisplayRequest(&hlcd);
 
 
@@ -154,19 +177,18 @@ int main(void)
         k++;
         if(k==20)
         {
-            HAL_PWR_EnableSleepOnExit(); //Porque lo trabajo?
-            HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
+          //  HAL_PWR_EnableSleepOnExit(); //Porque lo trabajo?
+          //  HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
 
         }
 
-        uint8_t test=0xD0;
-        volatile HAL_StatusTypeDef ret_val;
-        ret_val = HAL_I2C_Master_Transmit(&hi2c1,0b11101110,&test,1,100);
+//        uint8_t test=0xD0;
+//        volatile HAL_StatusTypeDef ret_val;
+        //ret_val = HAL_I2C_Master_Transmit(&hi2c1,0b11101110,&test,1,100);
 
-        ret_val = HAL_I2C_Master_Receive(&hi2c1,0b11101110,&test,1,100);  //Address as in datasheet: 0b1110111x
-        ret_val;
+        //ret_val = HAL_I2C_Master_Receive(&hi2c1,0b11101110,&test,1,100);  //Address as in datasheet: 0b1110111x
+//        ret_val;
     }
-//      HAL_LCD_Write()
   }
   /* USER CODE END 3 */
 }
