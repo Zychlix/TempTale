@@ -55,14 +55,44 @@ LCD_HandleTypeDef hlcd;
 
 /* USER CODE BEGIN PV */
 
+void TT_enter_standby()
+{
+//    HAL_PWR_EnterSTANDBYMode();
+//    __WFI();
+//    HAL_PWR_EnableSleepOnExit();
+   // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
+
+   // HAL_PWREx_EnableUltraLowPower();
+//    HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);
+//    GPIO_InitTypeDef GPIO_InitStruct;
+//    GPIO_InitStruct.Pin = START_BUTTON_Pin|STOP_BUTTON_Pin;
+//    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+//    GPIO_InitStruct.Pull = GPIO_PULLUP;
+//    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFE);
+//    __WFI();
+//SetWakeup
+}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-
     uint32_t press_time = HAL_GetTick()-device.button_press_time;
+
     if(press_time>1000 && device.button_pressed)
     {
         HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+        TT_enter_standby();
+
+        if(GPIO_Pin == START_BUTTON_Pin)
+        {
+            TT_start_button_long_press_handler();
+        }
+
+        if(GPIO_Pin == STOP_BUTTON_Pin)
+        {
+            TT_stop_button_long_press_handler();
+        }
     }
     else
     {
@@ -78,19 +108,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     }
 
     device.button_pressed = 0;
-
-    //HAL_PWR_DisableSleepOnExit();
 }
 
-void TT_enter_standby()
-{
-    //HAL_PWR_EnterSTANDBYMode();
-    //HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
-}
+
 
 int TT_start_button_click_handler()
 {
-    //HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
     TT_toggle_mode(&device);
     return 0;
 }
@@ -100,7 +123,6 @@ int TT_stop_button_click_handler()
     //HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
     return 0;
 }
-
 int TT_start_button_long_press_handler()
 {
     HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
@@ -110,9 +132,12 @@ int TT_start_button_long_press_handler()
 
 int TT_stop_button_long_press_handler()
 {
-    HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+//    HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+    device.enter_standby = 1;
+//    TT_enter_standby();
     return 0;
 }
+
 
 
 int sensors_refresh()
@@ -222,36 +247,34 @@ int main(void)
 
       /* USER CODE BEGIN 3 */
 
+      //HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);
 
 
 
     while(1) {
 
-
         sensors_refresh();
-
-
         HAL_LCD_Clear(&hlcd);
         TempTale_mode_executor(&device);
-
         HAL_LCD_UpdateDisplayRequest(&hlcd);
 
-
-
         HAL_Delay(200);
-
 
         HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
 
         button_press_handler();
 
         k++;
-        if(k==20)
+        if(k>20)
         {
-
+            //HAL_PWR_EnterSTANDBYMode();
         }
 
-
+        if(device.enter_standby)
+        {
+            TT_enter_standby();
+            device.enter_standby = 0;
+        }
     }
   }
   /* USER CODE END 3 */
@@ -416,6 +439,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
 
   /*Configure GPIO pin : LED_2_Pin */
   GPIO_InitStruct.Pin = LED_2_Pin;

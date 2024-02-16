@@ -97,10 +97,24 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/michal/TempTale/logger_diy/Core/Src/TMP112.c -o CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.s
 
+CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
+CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj: /home/michal/TempTale/logger_diy/Core/Src/TempTale.c
+CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/TempTale.c
+
+CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/michal/TempTale/logger_diy/Core/Src/TempTale.c > CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.i
+
+CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/michal/TempTale/logger_diy/Core/Src/TempTale.c -o CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.s
+
 CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj: /home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c
 CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c
 
 CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.s: cmake_force
 CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj: /home/michal/TempTale/logger_diy/Core/Src/main.c
 CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/main.c
 
 CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.s: cmake_force
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj: /home/michal/TempTale/logger_diy/Core/Src/stm32l1xx_hal_msp.c
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/stm32l1xx_hal_msp.c
 
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.s: cmake_force
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj: /home/michal/TempTale/logger_diy/Core/Src/stm32l1xx_it.c
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/stm32l1xx_it.c
 
 CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_it.c.s: cmake_force
 CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj: /home/michal/TempTale/logger_diy/Core/Src/syscalls.c
 CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/syscalls.c
 
 CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/syscalls.c.s: cmake_force
 CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj: /home/michal/TempTale/logger_diy/Core/Src/sysmem.c
 CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/sysmem.c
 
 CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/sysmem.c.s: cmake_force
 CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj: /home/michal/TempTale/logger_diy/Core/Src/system_stm32l1xx.c
 CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj -MF CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.obj -c /home/michal/TempTale/logger_diy/Core/Src/system_stm32l1xx.c
 
 CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.i: cmake_force
@@ -197,7 +211,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/system_stm32l1xx.c.s: cmake_force
 
 CMakeFiles/logger_diy.elf.dir/Core/Startup/startup_stm32l152rctx.s.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Core/Startup/startup_stm32l152rctx.s.obj: /home/michal/TempTale/logger_diy/Core/Startup/startup_stm32l152rctx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building ASM object CMakeFiles/logger_diy.elf.dir/Core/Startup/startup_stm32l152rctx.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building ASM object CMakeFiles/logger_diy.elf.dir/Core/Startup/startup_stm32l152rctx.s.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/logger_diy.elf.dir/Core/Startup/startup_stm32l152rctx.s.obj -c /home/michal/TempTale/logger_diy/Core/Startup/startup_stm32l152rctx.s
 
 CMakeFiles/logger_diy.elf.dir/Core/Startup/startup_stm32l152rctx.s.i: cmake_force
@@ -211,7 +225,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Startup/startup_stm32l152rctx.s.s: cmake_forc
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i: cmake_force
@@ -225,7 +239,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i: cmake_force
@@ -239,7 +253,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cor
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i: cmake_force
@@ -253,7 +267,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i: cmake_force
@@ -267,7 +281,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_ext
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i: cmake_force
@@ -281,7 +295,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_fla
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i: cmake_force
@@ -295,7 +309,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_fla
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i: cmake_force
@@ -309,7 +323,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_fla
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i: cmake_force
@@ -323,7 +337,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpi
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c.i: cmake_force
@@ -337,7 +351,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c.i: cmake_force
@@ -351,7 +365,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i: cmake_force
@@ -365,7 +379,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i: cmake_force
@@ -379,7 +393,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i: cmake_force
@@ -393,7 +407,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i: cmake_force
@@ -407,7 +421,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i: cmake_force
@@ -421,7 +435,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj: CMakeFiles/logger_diy.elf.dir/flags.make
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj: /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj: CMakeFiles/logger_diy.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj -MF CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj.d -o CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj -c /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c
 
 CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i: cmake_force
@@ -436,6 +450,7 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 logger_diy_elf_OBJECTS = \
 "CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.obj" \
 "CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj" \
+"CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj" \
 "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj" \
 "CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj" \
 "CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj" \
@@ -466,6 +481,7 @@ logger_diy_elf_EXTERNAL_OBJECTS =
 
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.obj
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj
+logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj
@@ -492,7 +508,7 @@ logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/s
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/build.make
 logger_diy.elf: CMakeFiles/logger_diy.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C executable logger_diy.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/michal/TempTale/logger_diy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking C executable logger_diy.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/logger_diy.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /home/michal/TempTale/logger_diy/cmake-build-debug/logger_diy.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /home/michal/TempTale/logger_diy/cmake-build-debug/logger_diy.bin"

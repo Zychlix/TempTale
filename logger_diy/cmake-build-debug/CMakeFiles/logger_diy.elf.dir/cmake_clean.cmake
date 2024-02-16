@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.obj.d"
   "CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj"
   "CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj.d"
+  "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj"
+  "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj.d"
   "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj"
   "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj.d"
   "CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj"

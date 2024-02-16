@@ -32,6 +32,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/michal/TempTale/logger_diy/Core/Src/BMP180.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/BMP180.c.obj.d"
   "/home/michal/TempTale/logger_diy/Core/Src/TMP112.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj.d"
+  "/home/michal/TempTale/logger_diy/Core/Src/TempTale.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj.d"
   "/home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj.d"
   "/home/michal/TempTale/logger_diy/Core/Src/main.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj.d"
   "/home/michal/TempTale/logger_diy/Core/Src/stm32l1xx_hal_msp.c" "CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj" "gcc" "CMakeFiles/logger_diy.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj.d"

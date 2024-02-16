@@ -18,6 +18,7 @@ int TempTale_init(TempTale_t * instance)
     instance->state = TT_Pressure;
     instance->button_pressed=0;
     instance->zero_altitude = instance->pressure_sensor->data.altitude;
+    instance->enter_standby = 0;
     return 0;
 }
 

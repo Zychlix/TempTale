@@ -90,6 +90,46 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.obj: /home/michal/TempTale/logge
   /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
   /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h
 
+CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj: /home/michal/TempTale/logger_diy/Core/Src/TempTale.c \
+  /home/michal/TempTale/logger_diy/Core/Inc/TempTale.h \
+  /home/michal/TempTale/logger_diy/Core/Inc/TempTale_LCD.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h \
+  /home/michal/TempTale/logger_diy/Core/Inc/stm32l1xx_hal_conf.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xc.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Include/core_cm3.h \
+  /usr/lib/gcc/arm-none-eabi/13.2.0/include/stdint.h \
+  /usr/arm-none-eabi/include/stdint.h \
+  /usr/arm-none-eabi/include/machine/_default_types.h \
+  /usr/arm-none-eabi/include/sys/features.h \
+  /usr/arm-none-eabi/include/_newlib_version.h \
+  /usr/arm-none-eabi/include/sys/_intsup.h \
+  /usr/arm-none-eabi/include/sys/_stdint.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Include/cmsis_version.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Include/cmsis_compiler.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Include/cmsis_gcc.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Include/mpu_armv7.h \
+  /home/michal/TempTale/logger_diy/Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  /usr/lib/gcc/arm-none-eabi/13.2.0/include/stddef.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
+  /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
+  /home/michal/TempTale/logger_diy/Core/Inc/TMP112.h \
+  /home/michal/TempTale/logger_diy/Core/Inc/BMP180.h
+
 CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale_LCD.c.obj: /home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c \
   /home/michal/TempTale/logger_diy/Core/Inc/TempTale_LCD.h \
   /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h \
@@ -163,6 +203,7 @@ CMakeFiles/logger_diy.elf.dir/Core/Src/main.c.obj: /home/michal/TempTale/logger_
   /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h \
   /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
   /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
+  /home/michal/TempTale/logger_diy/Core/Inc/TempTale.h \
   /home/michal/TempTale/logger_diy/Core/Inc/TempTale_LCD.h \
   /home/michal/TempTale/logger_diy/Core/Inc/TMP112.h \
   /home/michal/TempTale/logger_diy/Core/Inc/BMP180.h
@@ -949,6 +990,8 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 
 /usr/arm-none-eabi/include/stdio.h:
 
+/usr/arm-none-eabi/include/alloca.h:
+
 /home/michal/TempTale/logger_diy/Drivers/CMSIS/Include/mpu_armv7.h:
 
 /home/michal/TempTale/logger_diy/Drivers/CMSIS/Include/cmsis_gcc.h:
@@ -1067,8 +1110,6 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 
 /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h:
 
-/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h:
-
 /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h:
 
 /usr/arm-none-eabi/include/sys/_pthreadtypes.h:
@@ -1085,8 +1126,6 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 
 /usr/arm-none-eabi/include/sys/_sigset.h:
 
-/usr/arm-none-eabi/include/alloca.h:
-
 /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:
 
 /usr/arm-none-eabi/include/machine/stdlib.h:
@@ -1095,11 +1134,25 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 
 /home/michal/TempTale/logger_diy/Core/Src/TMP112.c:
 
+/home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h:
+
+/home/michal/TempTale/logger_diy/Core/Src/TempTale.c:
+
+/usr/arm-none-eabi/include/errno.h:
+
+/usr/arm-none-eabi/include/newlib.h:
+
+/usr/arm-none-eabi/include/sys/_timeval.h:
+
+/home/michal/TempTale/logger_diy/Core/Inc/TempTale.h:
+
+/usr/arm-none-eabi/include/machine/endian.h:
+
 /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c:
 
-/home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c:
-
 /home/michal/TempTale/logger_diy/Core/Inc/TempTale_LCD.h:
+
+/home/michal/TempTale/logger_diy/Core/Src/TempTale_LCD.c:
 
 /home/michal/TempTale/logger_diy/Core/Src/main.c:
 
@@ -1110,8 +1163,6 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 /home/michal/TempTale/logger_diy/Core/Src/syscalls.c:
 
 /usr/arm-none-eabi/include/machine/time.h:
-
-/usr/arm-none-eabi/include/machine/endian.h:
 
 /usr/arm-none-eabi/include/machine/_endian.h:
 
@@ -1126,9 +1177,3 @@ CMakeFiles/logger_diy.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim
 /home/michal/TempTale/logger_diy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h:
 
 /usr/arm-none-eabi/include/machine/types.h:
-
-/usr/arm-none-eabi/include/newlib.h:
-
-/usr/arm-none-eabi/include/sys/_timeval.h:
-
-/usr/arm-none-eabi/include/errno.h:

@@ -21,6 +21,7 @@ typedef struct
 
     uint32_t button_press_time;
     uint8_t button_pressed;
+    uint8_t enter_standby;
 
 }TempTale_t;
 
@@ -35,5 +36,9 @@ int TempTale_mode_executor(TempTale_t * instance);
 int TT_start_button_click_handler();
 
 int TT_stop_button_click_handler();
+
+int TT_start_button_long_press_handler();
+
+int TT_stop_button_long_press_handler();
 
 int TT_toggle_mode(TempTale_t * instance);
