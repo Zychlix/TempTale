@@ -165,43 +165,17 @@ static void MX_I2C1_Init(void);
 
 void TT_enter_standby()
 {
-//    HAL_PWR_EnterSTANDBYMode();
-//    __WFI();
-//    HAL_PWR_EnableSleepOnExit();
-    // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
-
-    // HAL_PWREx_EnableUltraLowPower();
-//    HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);
-//    GPIO_InitTypeDef GPIO_InitStruct;
-//    GPIO_InitStruct.Pin = START_BUTTON_Pin|STOP_BUTTON_Pin;
-//    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-//    GPIO_InitStruct.Pull = GPIO_PULLUP;
-//    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-
-//
-//    MODIFY_REG(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk),0);
-//    /* Select the regulator state in Stop mode: Set PDDS and LPSDSR bit according to PWR_Regulator value */
-//    MODIFY_REG(PWR->CR, PWR_CR_PDDS, 0);
-//    MODIFY_REG(PWR->CSR, PWR_CSR_WUF, 0);
-//    MODIFY_REG(PWR->CSR, PWR_CSR_EWUP1, 0xffffffff);
-
-    /* Set SLEEPDEEP bit of Cortex System Control Register */
-
-    /* Select Stop mode entry --------------------------------------------------*/
-
-    /* Request Wait For Interrupt */
-//    __WFI();
-
 
     HAL_SuspendTick();
-    HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFE);
+    HAL_LCD_DeInit(&hlcd);
+    HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,0);
+    HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,0);
+    HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
+//    HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);
+    HAL_PWR_EnterSTANDBYMode();
     SystemClock_Config();
-//    __WFI();
-//    NVIC_SystemReset();
-//    HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
-//    __WFI();
-//SetWakeup
+    HAL_LCD_Init(&hlcd);
+
 }
 /* USER CODE END PFP */
 
