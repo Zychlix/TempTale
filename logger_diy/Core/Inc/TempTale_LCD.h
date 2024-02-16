@@ -62,6 +62,9 @@ typedef enum
 #define LCD_CENTIGRADE_PIN (1<<2)
 #define LCD_CENTIGRADE_COL TT_COM_0
 
+#define LCD_CENTIGRADE_BAR_PIN (1<<2)
+#define LCD_CENTIGRADE_BAR_COL TT_COM_2
+
 typedef enum
 {
  TT_ONES = 0,

@@ -21,9 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "TempTale.h"
 #include "TempTale_LCD.h"
-#include "TMP112.h"
-#include "BMP180.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,62 +33,13 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-//uint32_t displayed_value = 0x000000f0;
-uint32_t displayed_value = 1<<15;
+
 TT_COM com = TT_COM_0;
 TMP112_t sensor={0};
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-typedef enum
-{
-    TT_Standby = 0,
-    TT_Temperature = 1,
-    TT_Pressure = 2,
-}TempTale_state_t;
-
-typedef struct
-{
-    TT_Display_t * lcd;
-    bmp_t * pressure_sensor;
-    TMP112_t * temperature_sensor;
-    TempTale_state_t state;
-
-    float zero_altitude;
-
-}TempTale_t;
-
-int TempTale_init(TempTale_t * instance)
-{
-    instance->state = TT_Temperature;
-    return 0;
-}
-
-int TempTale_Temperature_Refresh(TempTale_t * instance)
-{
-    return 0;
-}
-int TempTale_Pressure_Refresh(TempTale_t * instance)
-{
-    TT_Display_Decimal(instance->lcd,(instance->pressure_sensor->data.altitude-instance->zero_altitude)*10,TT_TENTHS); // Display in 10's
-    return 0;
-}
-
-int TempTale_mode_executor(TempTale_t * instance)
-{
-    switch (instance->state) {
-        case TT_Temperature:
-            TempTale_Temperature_Refresh(instance);
-            break;
-        case TT_Pressure:
-            TempTale_Pressure_Refresh(instance);
-            break;
-        default:
-
-    }
-    return 0;
-}
 
 extern bmp_t  bmp;
 
@@ -103,28 +54,99 @@ I2C_HandleTypeDef hi2c1;
 LCD_HandleTypeDef hlcd;
 
 /* USER CODE BEGIN PV */
-void Display_Temperature(TT_Display_t * instance,int16_t temperature)
-{
-    TT_Write_Segment(instance,LCD_CENTIGRADE_COL,0xffffffff,LCD_CENTIGRADE_PIN);
-    TT_Write_Segment(instance,LCD_TEMP_COL,0xffffffff,LCD_TEMP_PIN);
-    TT_Display_Decimal(instance,temperature,TT_TENTHS); // Display in 10's
 
-}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if(GPIO_Pin == START_BUTTON_Pin)
-    {
-        HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
-    }
 
-    if(GPIO_Pin == STOP_BUTTON_Pin)
+    uint32_t press_time = HAL_GetTick()-device.button_press_time;
+    if(press_time>1000 && device.button_pressed)
     {
         HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
-//        HAL_PWR_EnterSTANDBYMode();
-//        HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
     }
+    else
+    {
+        if(GPIO_Pin == START_BUTTON_Pin)
+        {
+            TT_start_button_click_handler();
+        }
+
+        if(GPIO_Pin == STOP_BUTTON_Pin)
+        {
+            TT_stop_button_click_handler();
+        }
+    }
+
+    device.button_pressed = 0;
+
+    //HAL_PWR_DisableSleepOnExit();
 }
+
+void TT_enter_standby()
+{
+    //HAL_PWR_EnterSTANDBYMode();
+    //HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
+}
+
+int TT_start_button_click_handler()
+{
+    //HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
+    TT_toggle_mode(&device);
+    return 0;
+}
+
+int TT_stop_button_click_handler()
+{
+    //HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+    return 0;
+}
+
+int TT_start_button_long_press_handler()
+{
+    HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
+    TT_toggle_mode(&device);
+    return 0;
+}
+
+int TT_stop_button_long_press_handler()
+{
+    HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+    return 0;
+}
+
+
+int sensors_refresh()
+{
+    if(TMP_Read(&sensor)!=0)
+    {
+        // while (1);
+    }
+
+    bmp.uncomp.temp = get_ut ();
+    bmp.data.temp = get_temp (&bmp);
+    bmp.uncomp.press = get_up (bmp.oss);
+    bmp.data.press = get_pressure (bmp);
+    bmp.data.altitude = get_altitude (&bmp);
+    return 0;
+}
+
+int button_press_handler()
+{
+    if(!HAL_GPIO_ReadPin(START_BUTTON_GPIO_Port,START_BUTTON_Pin) || !HAL_GPIO_ReadPin(STOP_BUTTON_GPIO_Port,STOP_BUTTON_Pin))
+    {
+        if(device.button_pressed)
+        {
+
+        } else
+        {
+            device.button_pressed=1;
+            device.button_press_time = HAL_GetTick();
+        }
+
+    }
+    return 0;
+}
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -177,55 +199,43 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int k=0;
 
-  TT_Display_t lcd;
-  lcd.hlcd = &hlcd;
-  sensor.i2c = &hi2c1;
-  bmp_init(&bmp);
+    TT_Display_t lcd;
+    lcd.hlcd = &hlcd;
+    sensor.i2c = &hi2c1;
+    bmp_init(&bmp);
 
-  device.lcd = &lcd;
-  device.pressure_sensor = &bmp;
-  device.state = TT_Pressure;
+    device.lcd = &lcd;
+    device.pressure_sensor = &bmp;
+    device.temperature_sensor = &sensor;
+    device.state = TT_Pressure;
+
+    sensors_refresh();
+
+    TempTale_init(&device);
+
+    int k=0;
+
     while (1)
   {
-    /* USER CODE END WHILE */
+      /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-
-
+      /* USER CODE BEGIN 3 */
 
 
-      if(TMP_Read(&sensor)!=0)
-      {
-          //while (1);
-      }
-      bmp.uncomp.temp = get_ut ();
-      bmp.data.temp = get_temp (&bmp);
-      bmp.uncomp.press = get_up (bmp.oss);
-      bmp.data.press = get_pressure (bmp);
-      bmp.data.altitude = get_altitude (&bmp);
-      device.zero_altitude = bmp.data.altitude;
+
+
     while(1) {
 
 
+        sensors_refresh();
 
-        if(TMP_Read(&sensor)!=0)
-        {
-            //while (1);
-        }
-
-        bmp.uncomp.temp = get_ut ();
-        bmp.data.temp = get_temp (&bmp);
-        bmp.uncomp.press = get_up (bmp.oss);
-        bmp.data.press = get_pressure (bmp);
-        bmp.data.altitude = get_altitude (&bmp);
 
         HAL_LCD_Clear(&hlcd);
-        //Display_Temperature(&lcd,bmp.data.temp);
         TempTale_mode_executor(&device);
 
         HAL_LCD_UpdateDisplayRequest(&hlcd);
+
 
 
         HAL_Delay(200);
@@ -233,12 +243,14 @@ int main(void)
 
         HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
 
+        button_press_handler();
+
         k++;
         if(k==20)
         {
-          //  HAL_PWR_EnableSleepOnExit(); //Porque lo trabajo?
-          //  HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
+
         }
+
 
     }
   }

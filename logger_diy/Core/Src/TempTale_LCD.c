@@ -171,6 +171,10 @@ void TT_Display_Decimal(TT_Display_t * instance, int16_t number, TT_Decimals_t p
             break;
         case TT_TENTHS:
             TT_Write_Segment(instance,LCD_TENTH_COL,0xFFFFFFFF,LCD_TENTH_PIN);
+            if(number<10 && number>-10)
+            {
+                TT_Print_Digit(instance,TT_DIGIT_B,0);
+            }
 
     }
 }

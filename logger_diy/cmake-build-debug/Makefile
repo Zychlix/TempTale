@@ -177,6 +177,30 @@ Core/Src/TMP112.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TMP112.c.s
 .PHONY : Core/Src/TMP112.c.s
 
+Core/Src/TempTale.obj: Core/Src/TempTale.c.obj
+.PHONY : Core/Src/TempTale.obj
+
+# target to build an object file
+Core/Src/TempTale.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.obj
+.PHONY : Core/Src/TempTale.c.obj
+
+Core/Src/TempTale.i: Core/Src/TempTale.c.i
+.PHONY : Core/Src/TempTale.i
+
+# target to preprocess a source file
+Core/Src/TempTale.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.i
+.PHONY : Core/Src/TempTale.c.i
+
+Core/Src/TempTale.s: Core/Src/TempTale.c.s
+.PHONY : Core/Src/TempTale.s
+
+# target to generate assembly for a file
+Core/Src/TempTale.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logger_diy.elf.dir/build.make CMakeFiles/logger_diy.elf.dir/Core/Src/TempTale.c.s
+.PHONY : Core/Src/TempTale.c.s
+
 Core/Src/TempTale_LCD.obj: Core/Src/TempTale_LCD.c.obj
 .PHONY : Core/Src/TempTale_LCD.obj
 
@@ -752,6 +776,9 @@ help:
 	@echo "... Core/Src/TMP112.obj"
 	@echo "... Core/Src/TMP112.i"
 	@echo "... Core/Src/TMP112.s"
+	@echo "... Core/Src/TempTale.obj"
+	@echo "... Core/Src/TempTale.i"
+	@echo "... Core/Src/TempTale.s"
 	@echo "... Core/Src/TempTale_LCD.obj"
 	@echo "... Core/Src/TempTale_LCD.i"
 	@echo "... Core/Src/TempTale_LCD.s"
