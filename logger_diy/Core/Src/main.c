@@ -70,7 +70,27 @@ void TT_enter_standby()
 //    GPIO_InitStruct.Pull = GPIO_PULLUP;
 //    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFE);
+
+
+    MODIFY_REG(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk),0);
+    /* Select the regulator state in Stop mode: Set PDDS and LPSDSR bit according to PWR_Regulator value */
+    MODIFY_REG(PWR->CR, PWR_CR_PDDS, 0);
+    MODIFY_REG(PWR->CSR, PWR_CSR_WUF, 0);
+    MODIFY_REG(PWR->CSR, PWR_CSR_EWUP1, 0xffffffff);
+
+    /* Set SLEEPDEEP bit of Cortex System Control Register */
+
+    /* Select Stop mode entry --------------------------------------------------*/
+
+    /* Request Wait For Interrupt */
+    __WFI();
+
+
+//    HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFE);
+//    HAL_SuspendTick();
+//    __WFI();
+//    NVIC_SystemReset();
+    HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
 //    __WFI();
 //SetWakeup
 }
@@ -107,6 +127,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         }
     }
 
+    HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+    HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
     device.button_pressed = 0;
 }
 
@@ -449,10 +471,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LED_2_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 3, 0);
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
-  HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI1_IRQn, 3, 0);
   HAL_NVIC_EnableIRQ(EXTI1_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
