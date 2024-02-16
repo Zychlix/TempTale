@@ -41,15 +41,66 @@ TMP112_t sensor={0};
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+typedef enum
+{
+    TT_Standby = 0,
+    TT_Temperature = 1,
+    TT_Pressure = 2,
+}TempTale_state_t;
 
+typedef struct
+{
+    TT_Display_t * lcd;
+    bmp_t * pressure_sensor;
+    TMP112_t * temperature_sensor;
+    TempTale_state_t state;
+
+    float zero_altitude;
+
+}TempTale_t;
+
+int TempTale_init(TempTale_t * instance)
+{
+    instance->state = TT_Temperature;
+    return 0;
+}
+
+int TempTale_Temperature_Refresh(TempTale_t * instance)
+{
+    return 0;
+}
+int TempTale_Pressure_Refresh(TempTale_t * instance)
+{
+    TT_Display_Decimal(instance->lcd,(instance->pressure_sensor->data.altitude-instance->zero_altitude)*10,TT_TENTHS); // Display in 10's
+    return 0;
+}
+
+int TempTale_mode_executor(TempTale_t * instance)
+{
+    switch (instance->state) {
+        case TT_Temperature:
+            TempTale_Temperature_Refresh(instance);
+            break;
+        case TT_Pressure:
+            TempTale_Pressure_Refresh(instance);
+            break;
+        default:
+
+    }
+    return 0;
+}
+
+extern bmp_t  bmp;
+
+TempTale_t device;
 /* USER CODE END PM */
+
+
 
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
 LCD_HandleTypeDef hlcd;
-
-extern bmp_t  bmp;
 
 /* USER CODE BEGIN PV */
 void Display_Temperature(TT_Display_t * instance,int16_t temperature)
@@ -127,16 +178,22 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int k=0;
-    sensor.i2c = &hi2c1;
-  while (1)
+
+  TT_Display_t lcd;
+  lcd.hlcd = &hlcd;
+  sensor.i2c = &hi2c1;
+  bmp_init(&bmp);
+
+  device.lcd = &lcd;
+  device.pressure_sensor = &bmp;
+  device.state = TT_Pressure;
+    while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 
-      bmp_init(&bmp);
-    TT_Display_t lcd;
-    lcd.hlcd = &hlcd;
+
 
 
       if(TMP_Read(&sensor)!=0)
@@ -148,7 +205,7 @@ int main(void)
       bmp.uncomp.press = get_up (bmp.oss);
       bmp.data.press = get_pressure (bmp);
       bmp.data.altitude = get_altitude (&bmp);
-      float zero_altitude = bmp.data.altitude;
+      device.zero_altitude = bmp.data.altitude;
     while(1) {
 
 
@@ -157,6 +214,7 @@ int main(void)
         {
             //while (1);
         }
+
         bmp.uncomp.temp = get_ut ();
         bmp.data.temp = get_temp (&bmp);
         bmp.uncomp.press = get_up (bmp.oss);
@@ -164,8 +222,9 @@ int main(void)
         bmp.data.altitude = get_altitude (&bmp);
 
         HAL_LCD_Clear(&hlcd);
-//        Display_Temperature(&lcd,bmp.data.press);
-        TT_Display_Decimal(&lcd,(bmp.data.altitude-zero_altitude)*10,TT_TENTHS); // Display in 10's
+        //Display_Temperature(&lcd,bmp.data.temp);
+        TempTale_mode_executor(&device);
+
         HAL_LCD_UpdateDisplayRequest(&hlcd);
 
 
@@ -179,15 +238,8 @@ int main(void)
         {
           //  HAL_PWR_EnableSleepOnExit(); //Porque lo trabajo?
           //  HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
-
         }
 
-//        uint8_t test=0xD0;
-//        volatile HAL_StatusTypeDef ret_val;
-        //ret_val = HAL_I2C_Master_Transmit(&hi2c1,0b11101110,&test,1,100);
-
-        //ret_val = HAL_I2C_Master_Receive(&hi2c1,0b11101110,&test,1,100);  //Address as in datasheet: 0b1110111x
-//        ret_val;
     }
   }
   /* USER CODE END 3 */

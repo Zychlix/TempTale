@@ -125,7 +125,7 @@ void bmp_init (bmp_t * bmp)
     memset(bmp, 0x00, sizeof(&bmp)); // clear bmp strut;
     bmp->err = read_chip_id ();      // check chip validity and I2C communication.
     bmp->err = read_calib_data ((short *)&bmp->calib);
-    set_oss (&bmp->oss, HIGH);       // set oversampling settings
+    set_oss (&bmp->oss, ULTRA_HIGH_RESOLUTION);       // set oversampling settings
 }
 
 /*!
