@@ -62,7 +62,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
     if(press_time>300 && device.button_pressed)
     {
-        HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+//        HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
 
         if(GPIO_Pin == START_BUTTON_Pin)
         {
@@ -173,9 +173,14 @@ static void MX_I2C1_Init(void);
 
 void TT_enter_standby()
 {
+    HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,1);
+    HAL_Delay(10);
+    HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,0);
 
     HAL_SuspendTick();
     HAL_LCD_DeInit(&hlcd);
+
+
     HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,0);
     HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,0);
     bmp_disable(&bmp);
@@ -189,7 +194,9 @@ void TT_enter_standby()
     bmp_init(&bmp);
     TempTale_init(&device);
     HAL_LCD_Init(&hlcd);
-
+    HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,1);
+    HAL_Delay(10);
+    HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,0);
     //For some reason enabling WakeUp pin makes is wake up instantly in standby
 
 }
@@ -245,7 +252,7 @@ int main(void)
     device.lcd = &lcd;
     device.pressure_sensor = &bmp;
     device.temperature_sensor = &sensor;
-    device.state = TT_Pressure;
+    device.state = TT_Altitude;
 
    // pressure_refresh();
 

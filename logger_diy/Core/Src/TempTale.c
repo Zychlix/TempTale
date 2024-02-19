@@ -15,7 +15,7 @@ void Display_Temperature(TT_Display_t * instance,int16_t temperature)
 
 int TempTale_init(TempTale_t * instance)
 {
-    instance->state = TT_Pressure;
+    instance->state = TT_Altitude;
     instance->button_pressed=0;
     instance->zero_altitude = TT_avg_altitude(instance);
     instance->enter_standby = 0;
@@ -36,7 +36,7 @@ int TempTale_Temperature_Refresh(TempTale_t * instance)
 
     return 0;
 }
-int TempTale_Pressure_Refresh(TempTale_t * instance)
+int TempTale_Altitude_Refresh(TempTale_t * instance)
 {
     float displayed_value = (TT_avg_altitude(instance) - instance->zero_altitude);
     TT_Display_Decimal(instance->lcd,displayed_value*10,TT_TENTHS); // Display in 10's
@@ -45,11 +45,22 @@ int TempTale_Pressure_Refresh(TempTale_t * instance)
     return 0;
 }
 
+int TempTale_Pressure_Refresh(TempTale_t * instance)
+{
+    float displayed_value = instance->pressure_sensor->data.press/100;
+    TT_Display_Decimal(instance->lcd,displayed_value,TT_ONES); // Display in 10's
+    //TT_Write_Segment(instance->lcd,TT_COM_1,0xffffffff,(1<<27));
+
+    return 0;
+}
 int TempTale_mode_executor(TempTale_t * instance)
 {
     switch (instance->state) {
         case TT_Temperature:
             TempTale_Temperature_Refresh(instance);
+            break;
+        case TT_Altitude:
+            TempTale_Altitude_Refresh(instance);
             break;
         case TT_Pressure:
             TempTale_Pressure_Refresh(instance);
@@ -63,13 +74,14 @@ int TempTale_mode_executor(TempTale_t * instance)
 int TT_toggle_mode(TempTale_t * instance)
 {
     switch (instance->state) {
-        case TT_Pressure:
+        case TT_Altitude:
             instance->state = TT_Temperature;
             break;
         case TT_Temperature:
             instance->state = TT_Pressure;
-//            HAL_PWR_EnableSleepOnExit();
-//            __WFI();
+            break;
+        case TT_Pressure:
+            instance->state = TT_Altitude;
             break;
         default:
     }

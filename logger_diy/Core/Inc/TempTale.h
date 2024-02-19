@@ -9,7 +9,8 @@ typedef enum
 {
     TT_Standby = 0,
     TT_Temperature = 1,
-    TT_Pressure = 2,
+    TT_Altitude = 2,
+    TT_Pressure = 3,
 }TempTale_state_t;
 
 typedef struct
@@ -35,7 +36,7 @@ int TempTale_init(TempTale_t * instance);
 
 int TempTale_Temperature_Refresh(TempTale_t * instance);
 
-int TempTale_Pressure_Refresh(TempTale_t * instance);
+int TempTale_Altitude_Refresh(TempTale_t * instance);
 
 int TempTale_mode_executor(TempTale_t * instance);
 
