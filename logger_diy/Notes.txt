@@ -1,0 +1,3 @@
+Q1 is a P-MOS transistor selecting the power source. It's gate is connected to stabilised 3.3V, disabling the battery while the device is connected to a USB port
+
+U6 is a GD25WD40 - 4Mb SPI Flash - Low power - 100nA
