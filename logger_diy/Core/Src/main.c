@@ -60,7 +60,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     uint32_t press_time = HAL_GetTick()-device.button_press_time;
 
-    if(press_time>1000 && device.button_pressed)
+    if(press_time>300 && device.button_pressed)
     {
         HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
 
@@ -87,8 +87,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         }
     }
 
-    HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
-    HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
+//    HAL_GPIO_TogglePin(LED_1_GPIO_Port,LED_1_Pin);
+//    HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
     device.button_pressed = 0;
 }
 
@@ -107,7 +107,7 @@ int TT_stop_button_click_handler()
 }
 int TT_start_button_long_press_handler()
 {
-    HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
+    //HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
     TT_toggle_mode(&device);
     return 0;
 }
@@ -122,24 +122,32 @@ int TT_stop_button_long_press_handler()
 
 
 
-int sensors_refresh()
+int pressure_refresh()
 {
-    if(TMP_Read(&sensor)!=0)
-    {
-        // while (1);
-    }
+
 
     bmp.uncomp.temp = get_ut ();
     bmp.data.temp = get_temp (&bmp);
     bmp.uncomp.press = get_up (bmp.oss);
     bmp.data.press = get_pressure (bmp);
     bmp.data.altitude = get_altitude (&bmp);
+
+    TT_add_pressure_record(&device);
+
+    return 0;
+}
+int temperature_refresh()
+{
+    if(TMP_Read(&sensor)!=0)
+    {
+        // while (1);
+    }
     return 0;
 }
 
 int button_press_handler()
 {
-    if(!HAL_GPIO_ReadPin(START_BUTTON_GPIO_Port,START_BUTTON_Pin) || !HAL_GPIO_ReadPin(STOP_BUTTON_GPIO_Port,STOP_BUTTON_Pin))
+    if(!HAL_GPIO_ReadPin(START_BUTTON_GPIO_Port,START_BUTTON_Pin) || !HAL_GPIO_ReadPin(STOP_BUTTON_GPIO_Port,STOP_BUTTON_Pin))  //If any of the buttons is pressed
     {
         if(device.button_pressed)
         {
@@ -170,11 +178,19 @@ void TT_enter_standby()
     HAL_LCD_DeInit(&hlcd);
     HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,0);
     HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,0);
-    HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
+    bmp_disable(&bmp);
+    HAL_I2C_DeInit(&hi2c1);
+    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
 //    HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);
-    HAL_PWR_EnterSTANDBYMode();
+//    HAL_PWR_EnterSTANDBYMode();
+    //Return back to normal power state:
+    HAL_I2C_Init(&hi2c1);
     SystemClock_Config();
+    bmp_init(&bmp);
+    TempTale_init(&device);
     HAL_LCD_Init(&hlcd);
+
+    //For some reason enabling WakeUp pin makes is wake up instantly in standby
 
 }
 /* USER CODE END PFP */
@@ -231,9 +247,17 @@ int main(void)
     device.temperature_sensor = &sensor;
     device.state = TT_Pressure;
 
-    sensors_refresh();
+   // pressure_refresh();
+
+//    for(int i = 0; i <TT_PRESSURE_RECORD_COUNT; i++)
+//    {
+//        pressure_refresh();
+//    }
 
     TempTale_init(&device);
+
+    HAL_GPIO_WritePin(LED_1_GPIO_Port,LED_1_Pin,0);
+    HAL_GPIO_WritePin(LED_2_GPIO_Port,LED_2_Pin,0);
 
     int k=0;
 
@@ -243,20 +267,31 @@ int main(void)
 
       /* USER CODE BEGIN 3 */
 
-      //HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);
-
-
-
     while(1) {
 
-        sensors_refresh();
+        for(int i = 0; i <2; i++)
+        {
+            pressure_refresh();
+        }
+        temperature_refresh();
+
         HAL_LCD_Clear(&hlcd);
         TempTale_mode_executor(&device);
         HAL_LCD_UpdateDisplayRequest(&hlcd);
 
-        HAL_Delay(200);
+        if(!device.zero_set)
+        {
+            if(k == 30)
+            {
+                device.zero_altitude = TT_avg_altitude(&device);
+                device.zero_set = 1;
+            }
 
-        HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
+        }
+
+//        HAL_Delay(150);
+
+        //HAL_GPIO_TogglePin(LED_2_GPIO_Port,LED_2_Pin);
 
         button_press_handler();
 

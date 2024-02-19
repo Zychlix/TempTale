@@ -246,4 +246,8 @@ float get_altitude (bmp_t * bmp)
 }
 
 
+void bmp_disable(bmp_t * bmp)
+{
+    set_oss (&bmp->oss, ULTRA_LOW_PWR_MODE);
+}
 

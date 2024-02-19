@@ -17,8 +17,16 @@ int TempTale_init(TempTale_t * instance)
 {
     instance->state = TT_Pressure;
     instance->button_pressed=0;
-    instance->zero_altitude = instance->pressure_sensor->data.altitude;
+    instance->zero_altitude = TT_avg_altitude(instance);
     instance->enter_standby = 0;
+    instance->zero_set = 0;
+
+    instance->current_pressure_record = 0;
+
+    for(int i= 0; i< TT_PRESSURE_RECORD_COUNT; i++)
+    {
+        instance->pressure_vector[i] = 0;
+    }
     return 0;
 }
 
@@ -30,7 +38,8 @@ int TempTale_Temperature_Refresh(TempTale_t * instance)
 }
 int TempTale_Pressure_Refresh(TempTale_t * instance)
 {
-    TT_Display_Decimal(instance->lcd,(instance->pressure_sensor->data.altitude-instance->zero_altitude)*10,TT_TENTHS); // Display in 10's
+    float displayed_value = (TT_avg_altitude(instance) - instance->zero_altitude);
+    TT_Display_Decimal(instance->lcd,displayed_value*10,TT_TENTHS); // Display in 10's
     TT_Write_Segment(instance->lcd,TT_COM_1,0xffffffff,(1<<27));
 
     return 0;
@@ -67,3 +76,27 @@ int TT_toggle_mode(TempTale_t * instance)
     return 0;
 }
 
+
+int TT_add_pressure_record(TempTale_t * instance)
+{
+    if(instance->current_pressure_record >= TT_PRESSURE_RECORD_COUNT)
+    {
+        return -1;
+    }
+        instance->pressure_vector[instance->current_pressure_record] = instance->pressure_sensor->data.altitude;
+
+        instance->current_pressure_record = (instance->current_pressure_record +1)%TT_PRESSURE_RECORD_COUNT;
+
+    return 0;
+}
+
+float TT_avg_altitude(TempTale_t * instance)
+{
+    float sum = 0;
+
+    for(int i = 0; i < TT_PRESSURE_RECORD_COUNT; i++)
+    {
+        sum+= instance->pressure_vector[i];
+    }
+    return sum/TT_PRESSURE_RECORD_COUNT;
+}

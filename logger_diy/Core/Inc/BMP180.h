@@ -184,4 +184,9 @@ int32_t get_pressure(bmp_t bmp);
 */
 float get_altitude (bmp_t * bmp);
 
+/*
+ *
+ */
+void bmp_disable(bmp_t * bmp);
+
 #endif /* BMP180_H_ */
